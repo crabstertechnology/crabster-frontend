@@ -1,0 +1,217 @@
+🦀 Crabster Technology — Official Website
+
+This repository contains the complete frontend and backend for the Crabster Technology website, including:
+
+Fully modular Tailwind-based UI
+
+Dynamic product sections
+
+Secure backend review system
+
+Firestore Admin integration
+
+Professional architecture for future scaling
+
+✔ Frontend: HTML + Tailwind + Modular Components
+✔ Backend: Node.js + Express + Firebase Admin
+✔ Hosting:
+
+Frontend: Netlify / Vercel / Hostinger (any static hosting)
+
+Backend: Render (free Node.js hosting)
+
+Database: Firestore
+
+🚀 Features
+🎨 Frontend (public/)
+
+Component-based HTML structure
+
+Clean CSS separated into main/animations/components
+
+Smooth AOS animations
+
+Custom cursor
+
+Responsive layout
+
+Product carousel (slider)
+
+Video preview support
+
+Review submission UI
+
+Contact form with email send
+
+Optimized image structure
+
+🔥 Backend (server/)
+
+A secure Node.js API used for the website review system.
+
+REST API endpoints
+
+Firestore Admin SDK (no exposed secrets)
+
+Middleware validation
+
+Fully protected backend (environment variables)
+
+Deployed on Render
+
+Supports:
+
+Add review
+
+Fetch reviews
+
+Timestamp ordering
+
+📁 Frontend Folder Structure
+public/
+├── index.html
+└── assets/
+    ├── css/
+    ├── js/
+    ├── images/
+    └── videos/
+src/
+└── components/
+
+Component Includes:
+header.html
+hero.html
+services.html
+newsection.html
+products.html
+founders.html
+reviews.html
+contact.html
+footer.html
+
+🖥️ Backend Folder Structure
+server/
+├── index.js
+├── package.json
+├── config/
+│   └── firebase.js
+├── controllers/
+│   └── reviews.controller.js
+├── routes/
+│   └── reviews.routes.js
+└── middlewares/
+    └── validateReview.js
+
+🔐 Environment Variables (Render)
+
+Go to Render → Web Service → Environment Variables:
+
+Add:
+
+FIREBASE_SERVICE_ACCOUNT = <paste your firebase service account JSON>
+
+
+No other env vars needed.
+
+🔗 API Endpoints
+✔ GET all reviews
+GET https://your-backend.onrender.com/api/reviews
+
+✔ POST a new review
+POST https://your-backend.onrender.com/api/reviews
+Content-Type: application/json
+
+
+Body:
+
+{
+  "name": "John Doe",
+  "service": "AI/ML",
+  "rating": 5,
+  "message": "Excellent work!"
+}
+
+📦 Frontend Deployment (Netlify recommended)
+
+Drag & drop the public/ folder in Netlify.
+
+Backend runs independently on Render.
+
+🧪 Testing Review System
+
+Visit your website
+
+Submit a review
+
+Open backend endpoint:
+
+https://your-backend.onrender.com/api/reviews
+
+
+Your new review should appear instantly.
+
+📞 Support & Contact
+
+Crabster Technology
+📧 crabstertechnology@gmail.com
+
+📍 Coimbatore, India
+🌐 https://crabstertech.in
+ 
+ Project structure final version
+ crabster-tech/
+│
+├── public/                          # Frontend (HTML/CSS/JS)
+│   ├── index.html                   # Main landing page
+│   ├── new.html (optional)
+│   └── assets/
+│       ├── css/
+│       │   ├── main.css
+│       │   ├── animations.css
+│       │   └── components.css
+│       ├── js/
+│       │   ├── app.js
+│       │   ├── navbar.js
+│       │   ├── slider.js
+│       │   ├── cursor.js
+│       │   └── reviews.js           # Connected to Render backend
+│       ├── images/
+│       │   ├── logo.png
+│       │   ├── p.jpg
+│       │   ├── 1.jpg
+│       │   ├── 2.jpg
+│       │   └── sasi.jpg
+│       └── videos/
+│           └── CT003.mp4
+│
+├── src/
+│   ├── components/
+│   │   ├── header.html
+│   │   ├── hero.html
+│   │   ├── services.html
+│   │   ├── newsection.html
+│   │   ├── products.html
+│   │   ├── founders.html
+│   │   ├── reviews.html
+│   │   ├── contact.html
+│   │   └── footer.html
+│   └── utils/
+│       └── (optional future utilities)
+│
+├── dist/                            # Production build (if you bundle)
+│
+├── server/                          # Backend (Node.js + Express + Firestore)
+│   ├── index.js
+│   ├── package.json
+│   ├── config/
+│   │   └── firebase.js              # Uses FIREBASE_SERVICE_ACCOUNT ENV variable
+│   ├── controllers/
+│   │   └── reviews.controller.js
+│   ├── routes/
+│   │   └── reviews.routes.js
+│   └── middlewares/
+│       └── validateReview.js
+│
+├── README.md                        # Project documentation
+├── robots.txt
+└── sitemap.xml

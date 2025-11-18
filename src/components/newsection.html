@@ -1,0 +1,96 @@
+<!-- newsection.html
+     Converted from your original new.html (Webflow) to a clean Tailwind component.
+     Replace the placeholder in index.html with this component's contents.
+-->
+<section id="new-section" class="relative bg-white overflow-hidden py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Tag + Heading (left) -->
+    <div class="lg:flex lg:items-start lg:gap-12">
+      <div class="lg:w-1/2" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-10 h-10 rounded-full bg-orange-100 hidden md:block"></div>
+          <div class="uppercase text-sm font-medium text-gray-500">Tech Solutions</div>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-gray-900 mb-6">
+          Elevate your brand with creative solutions
+        </h2>
+
+        <p class="text-base text-gray-600 max-w-xl">
+          Where imagination meets strategy to deliver measurable results. We build products,
+          systems and learning experiences that scale.
+        </p>
+      </div>
+
+      <!-- Hero cards (right) -->
+      <div class="mt-10 lg:mt-0 lg:flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6"
+           aria-hidden="false">
+
+        <!-- Card 1 -->
+        <div class="rounded-2xl overflow-hidden shadow-xl transform transition hover:scale-[1.01]">
+          <img
+            src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7010975c6564112ea_Images%20Hero%2001.jpg"
+            alt="Hero image 1" loading="lazy" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg">Creative Design</h3>
+            <p class="text-sm text-gray-500 mt-1">Branding and UI that convert visitors to users.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="rounded-2xl overflow-hidden shadow-xl transform transition hover:scale-[1.01]">
+          <img
+            src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b709501e1825fa0891_Images%20Hero%2002.jpg"
+            alt="Hero image 2" loading="lazy" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg">Product Engineering</h3>
+            <p class="text-sm text-gray-500 mt-1">Reliable hardware & software systems for real-world use.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="rounded-2xl overflow-hidden shadow-xl transform transition hover:scale-[1.01]">
+          <img
+            src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66fa93b7c6d1a72c0dc53f3b_Images%20Hero%2003.jpg"
+            alt="Hero image 3" loading="lazy" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg">Workshops & Training</h3>
+            <p class="text-sm text-gray-500 mt-1">Hands-on STEM & IoT learning for students and teams.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee / big repeating title -->
+    <div class="mt-16">
+      <div class="relative overflow-hidden">
+        <div class="whitespace-nowrap animate-marquee py-6">
+          <span class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mr-16">Crabster Technology</span>
+          <span class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mr-16">Crabster Technology</span>
+          <span class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mr-16">Crabster Technology</span>
+          <span class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mr-16">Crabster Technology</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative grid image -->
+    <div class="mt-12">
+      <img src="https://cdn.prod.website-files.com/66f594a3776bdc5c680392e2/66f5a43e83a41d9f75c52a49_Hero%20Background%20Grid.svg"
+           alt="Decorative grid" class="w-full max-w-4xl opacity-60">
+    </div>
+  </div>
+</section>
+
+<!-- Local small CSS for marquee animation (put in animations.css or include in component styles) -->
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    display: inline-block;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+  }
+</style>

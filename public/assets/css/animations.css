@@ -1,0 +1,85 @@
+/* ============================
+   FLOATING ANIMATIONS
+============================ */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-pulse-slow {
+  animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ============================
+   SCROLLBAR
+============================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dark);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--light);
+}
+
+/* ============================
+   CUSTOM CURSOR
+============================ */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none;
+  transition: width .1s, height .1s, border .1s;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none;
+  transition: transform .15s ease-out;
+}
+@media (min-width: 1024px) {
+  .cursor, .cursor-dot { display: block; }
+}
+
+/* ============================
+   DECORATIVE SHAPES
+============================ */
+.shape {
+  position: absolute;
+  z-index: 0;
+}
+.shape-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(255,140,66,0.1), rgba(255,140,66,0.04));
+}
+.shape-dots {
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(var(--accent) 1px, transparent 1px);
+  background-size: 15px 15px;
+  opacity: 0.1;
+}

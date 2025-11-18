@@ -1,0 +1,182 @@
+<section id="projects" class="py-20 relative min-h-screen bg-white overflow-hidden">
+
+  <!-- Background Decorative Blobs -->
+  <div class="absolute top-0 left-0 w-full h-full">
+    <div class="absolute top-20 right-10 w-64 h-64 bg-orange-100 rounded-full opacity-30 blur-3xl"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-orange-200 rounded-full opacity-20 blur-3xl"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+
+    <!-- Header -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-5xl md:text-6xl font-bold bg-black from-orange-600 to-orange-800 bg-clip-text text-transparent mb-6">
+        Featured Products
+      </h2>
+      <div class="h-1 w-32 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto rounded-full"></div>
+      <p class="mt-8 text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        Innovative solutions crafted with precision and passion
+      </p>
+    </div>
+
+    <!-- Slider Container -->
+    <div class="relative max-w-7xl mx-auto">
+
+      <div id="projectsContainer" class="overflow-hidden rounded-3xl shadow-2xl">
+        <div id="projectsSlider" class="flex transition-transform duration-700 ease-in-out">
+
+          <!-- PROJECT 1 -->
+          <div class="w-full flex-shrink-0 bg-white">
+            <div class="grid lg:grid-cols-2 min-h-[600px]">
+
+              <!-- Image -->
+              <div class="relative group overflow-hidden">
+                <img src="assets/images/p.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+
+                <div class="absolute bottom-8 left-8 right-8">
+                  <div class="glass p-4">
+                    <h3 class="text-2xl font-bold text-white mb-2">CT001</h3>
+                    <div class="flex items-center space-x-2">
+                      <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span class="text-white/90 text-sm">Active Project</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-12 flex flex-col justify-center">
+                <span class="badge-orange">IoT & Automation</span>
+                <h4 class="product-title">Automated Watering System For Plants</h4>
+
+                <p class="text-lg text-gray-600 leading-relaxed">
+                  Eco-friendly solar-powered automated watering system with real-time soil monitoring.
+                </p>
+
+                <div class="flex flex-wrap gap-3 mt-6">
+                  <span class="tag">Solar Powered</span>
+                  <span class="tag">IoT Sensors</span>
+                  <span class="tag">Eco-Friendly</span>
+                </div>
+
+                <button class="explore-btn">Explore System →</button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- PROJECT 2 with video -->
+          <div class="w-full flex-shrink-0 bg-white">
+            <div class="grid lg:grid-cols-2 min-h-[600px]">
+
+              <!-- Content Left -->
+              <div class="p-12 flex flex-col justify-center">
+                <span class="badge-blue">Smart Home</span>
+                <h4 class="product-title">Wi-Fi Enabled Home Automation</h4>
+
+                <p class="text-lg text-gray-600 leading-relaxed">
+                  Complete offline ESP-based automation system with a built-in Wi-Fi Access Point.
+                </p>
+
+                <div class="glass p-4 mt-4">
+                  <p class="text-gray-700 font-medium">
+                    Perfect for rural or isolated locations — works without internet.
+                  </p>
+                </div>
+
+                <div class="flex flex-wrap gap-3 mt-6">
+                  <span class="tag">ESP Controller</span>
+                  <span class="tag">Offline Mode</span>
+                  <span class="tag">Mobile Interface</span>
+                </div>
+
+                <button class="explore-btn">Explore System →</button>
+              </div>
+
+              <!-- Video Right -->
+              <div class="relative group overflow-hidden">
+                <video id="projectVideo" muted loop class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                  <source src="assets/videos/CT003.mp4" type="video/mp4">
+                </video>
+
+                <div class="absolute bottom-8 left-8">
+                  <button id="toggleBtn" class="video-btn">
+                    <span class="text-2xl" id="playIcon">▶</span>
+                  </button>
+                </div>
+
+                <div class="absolute top-8 right-8">
+                  <div class="glass p-4">
+                    <h3 class="text-2xl font-bold text-white mb-2">CT003</h3>
+                    <div class="flex items-center space-x-2">
+                      <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                      <span class="text-white/90 text-sm">Live Demo</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- PROJECT 3 -->
+          <div class="w-full flex-shrink-0 bg-white">
+            <div class="grid lg:grid-cols-2 min-h-[600px]">
+
+              <div class="relative group overflow-hidden">
+                <div class="w-full h-full gradient-card flex items-center justify-center text-center text-white p-8">
+                  <div>
+                    <div class="icon-circle mb-6">
+                      <svg class="w-16 h-16" fill="currentColor">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                      </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-2">Coming Soon</h3>
+                    <p class="text-white/80">Advanced Security Platform</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-12 flex flex-col justify-center">
+                <span class="badge-purple">Cybersecurity</span>
+                <h4 class="product-title">Integrated Security Platform</h4>
+
+                <p class="text-lg text-gray-600 leading-relaxed">
+                  Enterprise-level threat detection with automated responses and real-time monitoring.
+                </p>
+
+                <div class="flex flex-wrap gap-3 mt-6">
+                  <span class="tag">Threat Detection</span>
+                  <span class="tag">Auto Response</span>
+                  <span class="tag">Real-time Monitoring</span>
+                </div>
+
+                <button class="explore-btn">Learn More →</button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slider Arrows -->
+      <button id="prevBtn" class="slider-left">
+        ←
+      </button>
+
+      <button id="nextBtn" class="slider-right">
+        →
+      </button>
+
+      <!-- Dots -->
+      <div class="flex justify-center mt-8 space-x-3">
+        <button class="slide-dot" data-slide="0"></button>
+        <button class="slide-dot" data-slide="1"></button>
+        <button class="slide-dot" data-slide="2"></button>
+      </div>
+
+    </div>
+
+  </div>
+</section>

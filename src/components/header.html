@@ -1,0 +1,80 @@
+<header class="fixed w-full z-50 transition-all duration-300" id="header">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center justify-between px-6 py-4">
+      
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="relative group">
+          <div class="absolute inset-0 bg-secondary rounded-full blur opacity-30 group-hover:opacity-80 transition duration-300"></div>
+
+          <div class="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center border-2 border-white overflow-hidden">
+            <img src="assets/images/logo.png" alt="Crabster Technology Logo" class="w-10 h-10 object-contain">
+          </div>
+        </div>
+
+        <span class="text-2xl font-bold text-dark hidden md:block">Crabster Technology</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex space-x-8">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#projects" class="nav-link">Products</a>
+        <a href="#team" class="nav-link">Founders</a>
+        <a href="#feedback" class="nav-link">Review</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="/workq" class="nav-link">Open WorkQ Tracker</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <a href="#contact" class="hidden md:block px-6 py-2 bg-gradient-to-br from-primary to-primary-light text-black rounded-full border border-black hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+        Get in Touch
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <div class="header-right flex items-center lg:hidden">
+        <button id="menu-btn" class="text-dark focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-nav" class="mobile-nav fixed top-0 right-0 w-full h-screen bg-white z-50 p-6 flex flex-col lg:hidden">
+    <div class="flex justify-between items-center mb-8">
+      <div class="flex items-center space-x-3">
+        <div class="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center border-2 border-white overflow-hidden">
+          <img src="assets/images/logo.png" alt="Crabster Technology Logo" class="w-10 h-10 object-contain">
+        </div>
+        <span class="text-2xl font-bold text-dark">Crabster</span>
+      </div>
+      <button id="close-menu" class="focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <nav class="flex flex-col space-y-6 text-lg">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#projects" class="mobile-nav-link">Products</a>
+      <a href="#team" class="mobile-nav-link">Founders</a>
+      <a href="#feedback" class="mobile-nav-link">Review</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="/workq" class="mobile-nav-link">Open WorkQ Tracker</a>
+    </nav>
+
+    <div class="flex space-x-10 mt-auto mb-10">
+      <a href="https://www.instagram.com/crabstertechnology" class="social-link">
+        <i class="fab fa-instagram text-xl"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/crabster-technology" class="social-link">
+        <i class="fab fa-linkedin text-xl"></i>
+      </a>
+    </div>
+  </div>
+</header>
