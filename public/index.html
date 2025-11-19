@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/feedback.css">
+    <link rel="stylesheet" href="assets/css/products.css">
+
 </head>
 
 <body class="bg-light text-dark">
@@ -54,18 +57,18 @@
 <!-- particles.js CDN — add before AOS script or before closing body -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 
-<!-- =============================== -->
 <!-- Load Components Automatically -->
-<!-- =============================== -->
 <script>
-function loadComponent(id, file) {
-    fetch(`./components/${file}`)
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById(id).innerHTML = html;
-        })
-        .catch(err => console.error("Component load error:", file, err));
+function loadComponent(id, file, callback) {
+  fetch(`./components/${file}`)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById(id).innerHTML = html;
+      if (typeof callback === "function") callback();
+    })
+    .catch(err => console.error("Component load error:", file, err));
 }
+
 
 // Load header component
 fetch("./components/header.html")
@@ -87,7 +90,12 @@ loadComponent("services-container", "services.html");
 loadComponent("newsection-container", "newsection.html");
 loadComponent("products-container", "products.html");
 loadComponent("founders-container", "founders.html");
-loadComponent("reviews-container", "reviews.html");
+loadComponent("reviews-container", "reviews.html", () => {
+    if (typeof initReviews === "function") {
+        initReviews();
+    }
+});
+
 loadComponent("contact-container", "contact.html");
 loadComponent("footer-container", "footer.html");
 </script>
@@ -160,6 +168,7 @@ setTimeout(() => {
 <!-- =============================== -->
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/cursor.js"></script>
+<script src="assets/js/products.js"></script>
 <script src="assets/js/reviews.js"></script>
 <script src="assets/js/app.js"></script>
 

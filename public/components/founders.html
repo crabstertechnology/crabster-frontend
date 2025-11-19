@@ -1,85 +1,97 @@
-<section id="team" class="py-20 bg-white relative overflow-hidden">
+<section id="team" class="py-24 bg-white relative overflow-hidden">
 
-  <div class="absolute top-20 right-20 w-64 h-64 rounded-full bg-blue-50 opacity-60 blur-3xl"></div>
-  <div class="absolute bottom-40 left-10 w-40 h-40 rounded-full bg-indigo-50 opacity-50 blur-2xl"></div>
+  <!-- Soft floating glows -->
+  <div class="absolute top-24 right-24 w-72 h-72 rounded-full bg-blue-200 opacity-30 blur-[120px]"></div>
+  <div class="absolute bottom-32 left-16 w-56 h-56 rounded-full bg-indigo-200 opacity-30 blur-[100px]"></div>
 
   <div class="container mx-auto px-6 relative z-10">
 
-    <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3">Meet Our</h2>
-      <h2 class="text-4xl md:text-5xl font-bold text-blue-600 mb-4">Founder</h2>
-      <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+    <!-- Heading -->
+    <div class="text-center mb-20" data-aos="fade-up">
+      <h2 class="text-5xl font-extrabold text-gray-900 tracking-tight">Meet Our</h2>
+      <h2 class="text-5xl font-extrabold text-blue-600 mt-1 tracking-tight">Founder</h2>
+      <div class="w-24 h-1 mt-4 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
     </div>
 
-    <div class="flex justify-center max-w-4xl mx-auto">
+    <!-- Founder Card -->
+    <div class="flex justify-center max-w-5xl mx-auto">
 
-      <div class="founder-card">
+      <div class="founder-card rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row bg-white/80 backdrop-blur-xl border border-gray-100 hover:shadow-2xl transition-all duration-500" data-aos="fade-up">
 
-        <!-- Gradient Left Strip -->
-        <div class="w-full lg:w-2 bg-gradient-to-b from-blue-500 to-blue-600"></div>
+        <!-- Animated left strip -->
+        <div class="hidden lg:block w-2 bg-gradient-to-b from-blue-500 to-blue-700"></div>
 
-        <div class="flex-1 flex flex-col lg:flex-row">
+        <!-- Image Section -->
+        <div class="lg:w-1/3 p-10 bg-gradient-to-br from-gray-50 to-blue-50 flex flex-col items-center justify-center relative">
 
-          <!-- Image -->
-          <div class="lg:w-1/3 p-8 lg:p-12 bg-gradient-to-br from-gray-50 to-blue-50 flex flex-col items-center">
+          <div class="relative group mb-8">
+            <!-- Outer ring glow -->
+            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-30 blur-2xl group-hover:opacity-40 transition duration-500"></div>
 
-            <div class="relative mb-6">
-              <div class="profile-frame">
-                <img src="assets/images/sasi.jpg" class="w-full h-full object-cover">
-              </div>
-
-              <div class="status-indicator"></div>
+            <!-- Profile frame -->
+            <div class="profile-frame relative w-44 h-44 rounded-full overflow-hidden ring-4 ring-white shadow-xl group-hover:scale-105 transition duration-500">
+              <img src="assets/images/sasi.jpg" class="w-full h-full object-cover">
             </div>
 
-            <div class="flex space-x-4">
-              <a href="https://www.instagram.com/_sasi_1818" class="social-icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/sasitharan-a-49a383327" class="social-icon">
-                <i class="fab fa-linkedin"></i>
-              </a>
+            <!-- Online status -->
+            <div class="status-indicator absolute bottom-4 right-4 w-5 h-5 bg-green-500 border-2 border-white rounded-full animate-pulse"></div>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="flex gap-5">
+            <a href="https://www.instagram.com/_sasi_1818" target="_blank"
+               class="social-icon glass-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/sasitharan-crabster" target="_blank"
+               class="social-icon glass-icon">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Content Section -->
+        <div class="lg:w-2/3 p-10 lg:p-14">
+
+          <h3 class="text-4xl font-bold text-gray-900 mb-3 tracking-tight">Sasitharan</h3>
+
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="badge-blue-solid px-4 py-1.5 text-sm font-semibold rounded-full bg-blue-600 text-white shadow-sm">Founder & CEO</span>
+            <span class="location text-gray-500 flex items-center text-sm gap-2">
+              <i class="fas fa-map-marker-alt text-blue-600"></i> Coimbatore, India
+            </span>
+          </div>
+
+          <!-- Info Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+
+            <div>
+              <h4 class="text-gray-500 text-sm font-semibold uppercase tracking-wide">Designation</h4>
+              <p class="text-gray-900 text-lg font-medium">Founder & CEO</p>
+            </div>
+
+            <div>
+              <h4 class="text-gray-500 text-sm font-semibold uppercase tracking-wide">Expert Fields</h4>
+              <p class="text-gray-900 text-lg font-medium">AI, IoT, Tech</p>
+            </div>
+
+            <div>
+              <h4 class="text-gray-500 text-sm font-semibold uppercase tracking-wide">Focus</h4>
+              <p class="text-gray-900 text-lg font-medium">Innovation</p>
             </div>
 
           </div>
 
-          <!-- Right Side -->
-          <div class="lg:w-2/3 p-8 lg:p-12 bg-white">
+          <p class="mt-10 text-gray-600 leading-relaxed text-lg">
+            A visionary leader and technology innovator passionate about AI, Machine Learning,
+            and IoT. Building Crabster Technology to empower industries with intelligent solutions.
+          </p>
 
-            <h3 class="founder-name">Sasitharan</h3>
-
-            <div class="founder-badges">
-              <span class="badge-blue-solid">Founder & CEO</span>
-              <span class="location">Coimbatore, India</span>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-
-              <div>
-                <h4 class="field-title">Designation</h4>
-                <p class="field-value">Founder & CEO</p>
-              </div>
-
-              <div>
-                <h4 class="field-title">Expert Fields</h4>
-                <p class="field-value">AI, IoT, Tech</p>
-              </div>
-
-              <div>
-                <h4 class="field-title">Focus</h4>
-                <p class="field-value">Innovation</p>
-              </div>
-
-            </div>
-
-            <p class="founder-desc">
-              Visionary leader and technology enthusiast leading Crabster Technology with passion for AI and IoT.
-            </p>
-
-          </div>
         </div>
 
       </div>
-
     </div>
   </div>
 </section>

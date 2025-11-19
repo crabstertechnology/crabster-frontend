@@ -1,59 +1,77 @@
-<section id="feedback" class="py-20 relative overflow-hidden">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Feedback</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  
+</head>
+<body>
+  <section id="feedback">
+    <div class="shape shape-circle"></div>
+    <div class="shape"></div>
 
-  <div class="shape shape-circle -bottom-40 -left-40 opacity-20"></div>
-
-  <div class="container mx-auto px-6">
-
-    <div class="text-center mb-16" data-aos="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Client Feedback</h2>
-      <div class="h-1 w-24 bg-secondary mx-auto"></div>
-      <p class="mt-6 text-gray-600 max-w-xl mx-auto">
-        What our clients say about our solutions and services — or leave your own review below!
-      </p>
-    </div>
-
-    <!-- Review Form -->
-    <div class="bg-white rounded-xl shadow-lg p-10 mb-12 max-w-4xl mx-auto" data-aos="fade-up">
-
-      <h3 class="text-2xl font-bold text-orange-700 mb-4">Leave Your Review</h3>
-
-      <input type="text" id="username" class="review-input" placeholder="Your Name">
-
-      <select id="service" class="review-input">
-        <option value="">Select Service</option>
-        <option value="AI/ML Project/Consultancy">AI/ML Project/Consultancy</option>
-        <option value="IoT Solution/Consultancy">IoT Project/Consultancy</option>
-        <option value="STEM Workshop">STEM Workshop</option>
-        <option value="Electronics Service">Electronics Service</option>
-      </select>
-
-      <div class="flex items-center mb-4">
-        <label class="mr-3 font-semibold">Rating:</label>
-
-        <div id="stars" class="flex space-x-1">
-          <i class="fas fa-star text-gray-300 text-xl cursor-pointer"></i>
-          <i class="fas fa-star text-gray-300 text-xl cursor-pointer"></i>
-          <i class="fas fa-star text-gray-300 text-xl cursor-pointer"></i>
-          <i class="fas fa-star text-gray-300 text-xl cursor-pointer"></i>
-          <i class="fas fa-star text-gray-300 text-xl cursor-pointer"></i>
-        </div>
+    <div class="container">
+      <!-- Header -->
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Client Feedback</h2>
+        <div class="title-underline"></div>
+        <p class="section-description">
+          What our clients say about our solutions and services — or leave your own review below!
+        </p>
       </div>
 
-      <textarea id="comment" class="review-input" placeholder="Your review..."></textarea>
+      <!-- Review Form -->
+      <div class="review-form-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="form-title">Leave Your Review</h3>
 
-      <button onclick="submitReview()" class="review-submit-btn">
-        Submit Review
-      </button>
+        <input type="text" id="username" class="review-input" placeholder="Your Name" />
 
+        <select id="service" class="review-input">
+          <option value="">Select Service</option>
+          <option value="STEM Workshop">EZCirkit</option>
+          <option value="AI/ML Project/Consultancy">AI/ML Project/Consultancy</option>
+          <option value="IoT Project/Consultancy">IoT Project/Consultancy</option>
+          <option value="Electronics Service">Electronics Service</option>
+        </select>
+
+        <div class="rating-container">
+          <label class="rating-label">Rating:</label>
+          <div id="stars" class="stars-wrapper">
+            <i class="fas fa-star star-icon"></i>
+            <i class="fas fa-star star-icon"></i>
+            <i class="fas fa-star star-icon"></i>
+            <i class="fas fa-star star-icon"></i>
+            <i class="fas fa-star star-icon"></i>
+          </div>
+        </div>
+
+        <textarea id="comment" class="review-input" placeholder="Share your experience with us..."></textarea>
+
+        <button class="submit-btn">
+
+          <i class="fas fa-paper-plane"></i> Submit Review
+        </button>
+      </div>
+
+      <!-- Reviews List -->
+      <div id="reviewsSection" class="reviews-grid"></div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button id="loadMoreBtn" onclick="loadMore()" class="action-btn hidden">
+          <i class="fas fa-chevron-down"></i> Load More
+        </button>
+        <button id="hideBtn" onclick="hideReviews()" class="action-btn hidden">
+          <i class="fas fa-chevron-up"></i> Hide
+        </button>
+      </div>
     </div>
+  </section>
 
-    <!-- Reviews List -->
-    <div id="reviewsSection" class="grid md:grid-cols-2 gap-8"></div>
-
-    <!-- Buttons -->
-    <div class="text-center mt-8">
-      <button id="loadMoreBtn" onclick="loadMore()" class="review-btn hidden">Load More</button>
-      <button id="hideBtn" onclick="hideReviews()" class="review-btn hidden">Hide</button>
-    </div>
-  </div>
-</section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+</body>
+</html>
