@@ -51,6 +51,9 @@
     <div id="contact-container"></div>
     <div id="footer-container"></div>
 
+<!-- particles.js CDN — add before AOS script or before closing body -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
 <!-- =============================== -->
 <!-- Load Components Automatically -->
 <!-- =============================== -->
@@ -82,17 +85,62 @@ loadComponent("footer-container", "footer.html");
 <script>
 setTimeout(() => {
 
-    // Init AOS
-    if (window.AOS) AOS.init();
+  // 1) Theme overrides (match main index.html orange theme)
+  try {
+    document.documentElement.style.setProperty('--primary', '#FF6B00');
+    document.documentElement.style.setProperty('--primary-light', '#FF9E44');
+    document.documentElement.style.setProperty('--primary-dark', '#E25D00');
+    document.documentElement.style.setProperty('--secondary', '#FFC107');
+    document.documentElement.style.setProperty('--dark', '#2D2D2D');
+  } catch (e) {
+    console.warn("Failed to set theme vars", e);
+  }
 
-    // Slider init
-    if (typeof initSlider === "function") initSlider();
+  // 2) Init particles.js if available (node connections)
+  if (window.particlesJS) {
+    try {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 }},
+          color: { value: "#FF6B00" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5 },
+          size: { value: 3, random: true },
+          line_linked: { enable: true, distance: 150, color: "#FF9E44", opacity: 0.38, width: 1 },
+          move: { enable: true, speed: 4, out_mode: "out" }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+          modes: {
+            grab: { distance: 140, line_linked: { opacity: 1 }},
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
+      });
+    } catch (e) {
+      console.warn("particles init failed", e);
+    }
+  }
 
-    // Review system init
-    if (typeof fetchReviews === "function") fetchReviews();
+  // 3) AOS init (if included)
+  if (window.AOS) {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+  }
 
-}, 800); 
+  // 4) Slider / Reviews existing inits
+  if (typeof initSlider === "function") initSlider();
+  if (typeof fetchReviews === "function") fetchReviews();
+
+}, 800);
 </script>
+
 
 <!-- =============================== -->
 <!-- JS Files (load AFTER components) -->

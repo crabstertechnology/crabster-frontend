@@ -1,3 +1,15 @@
+window.addEventListener("scroll", () => {
+  const header = document.getElementById("header");
+
+  if (!header) return;
+
+  if (window.scrollY > 20) {
+    header.classList.add("shadow-xl", "bg-white/80", "backdrop-blur-lg");
+  } else {
+    header.classList.remove("shadow-xl", "bg-white/80", "backdrop-blur-lg");
+  }
+});
+
 // =======================
 // MOBILE MENU TOGGLE
 // =======================

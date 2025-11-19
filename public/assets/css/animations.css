@@ -83,3 +83,29 @@
   background-size: 15px 15px;
   opacity: 0.1;
 }
+/* ===== Advanced Cursor Animations ===== */
+
+.cursor {
+  transition:
+    width 0.15s ease,
+    height 0.15s ease,
+    border 0.15s ease,
+    transform 0.15s ease;
+}
+
+/* Click expand effect */
+.cursor.expand {
+  transform: scale(2);
+  border-color: var(--primary);
+  opacity: 0.8;
+}
+
+/* Hover enlarge */
+.cursor.scale-150 {
+  transform: scale(2);
+}
+
+/* Dot shrink */
+.cursor-dot.scale-0 {
+  transform: scale(0);
+}

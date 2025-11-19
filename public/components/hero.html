@@ -1,6 +1,9 @@
 <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-
+  <!-- Particles background (node connections) -->
   <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+  <!-- faint orange gradient overlay (behind content, above particles) -->
+  <div class="absolute inset-0 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-700 opacity-5 z-5 animated-gradient pointer-events-none"></div>
 
   <!-- Decorative Shapes -->
   <div class="shape shape-circle top-20 left-10 animate-pulse-slow"></div>
@@ -10,7 +13,7 @@
     <div class="lg:w-4/8">
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
         <span class="text-primary">Unleash The </span>
-        <span class="highlight">Power Of Technology</span>
+        <span class="highlight highlight-orange">Power Of Technology</span>
       </h1>
 
       <p class="text-base sm:text-lg md:text-xl mb-8 text-gray-700 max-w-lg mx-auto">
@@ -18,9 +21,14 @@
       </p>
 
       <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
-        <a href="#services" class="cta-btn">Explore Services</a>
-        <a href="#projects" class="cta-btn">View Products</a>
-      </div>
+      <a href="#services"
+        class="px-8 py-3 border-2 text-dark rounded-full font-medium transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-black hover:border-primary">
+        Explore Services
+      </a>
+      <a href="#projects"
+        class="px-8 py-3 border-2 text-dark rounded-full font-medium transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-black hover:border-primary">
+        View Products
+      </a>
     </div>
   </section>
 

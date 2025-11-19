@@ -154,3 +154,79 @@ a:hover {
   color: white;
   transform: translateY(-3px);
 }
+/* small helper for hero overlay (faint animated gradient) */
+.animated-gradient {
+  background-repeat: no-repeat;
+  background-size: cover;
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+
+/* make sure hero particles are underneath content */
+#particles-js {
+  z-index: 0;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+/* overlay must be above particles but behind content */
+.animated-gradient {
+  z-index: 5;
+}
+/* ========================================
+   PREMIUM CARD SHADOW + HOVER DEPTH (GLOBAL)
+======================================== */
+
+.premium-card,
+.service-card,
+.review-card,
+.founder-card,
+.contact-card,
+.hover-lift,
+.glass {
+  border-radius: 20px !important;
+  transition: all 0.35s ease !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+}
+
+/* Strong hover lift */
+.premium-card:hover,
+.service-card:hover,
+.review-card:hover,
+.founder-card:hover,
+.contact-card:hover,
+.hover-lift:hover {
+  transform: translateY(-14px) scale(1.02);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.14);
+}
+
+/* Extra soft glow for premium effect */
+.premium-card:hover::after,
+.service-card:hover::after,
+.review-card:hover::after,
+.founder-card:hover::after,
+.contact-card:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 28px rgba(255, 140, 66, 0.25);
+  pointer-events: none;
+}
+/* Tighten large gaps between stacked sections */
+section + section {
+  margin-top: 0 !important;
+}
+
+/* Reduce default large headings top margins inside sections */
+section h2, section h3 {
+  margin-top: 0;
+}
+
+/* If any section still tries to be a full height, cap it */
+section {
+  min-height: auto !important;
+}
+
+/* Optional: make container centered & not overly wide */
+.container { max-width: 1200px; margin-left: auto; margin-right: auto; }

@@ -1,26 +1,34 @@
 // =======================
-// CUSTOM CURSOR
+// ADVANCED CUSTOM CURSOR
 // =======================
+
 const cursor = document.querySelector(".cursor");
 const cursorDot = document.querySelector(".cursor-dot");
 
+// Smooth movement position
 document.addEventListener("mousemove", (e) => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
+  const x = e.pageX;
+  const y = e.pageY;
 
-  cursorDot.style.left = e.clientX + "px";
-  cursorDot.style.top = e.clientY + "px";
+  cursor.style.transform = `translate(${x}px, ${y}px)`;
+  cursorDot.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-// Grow cursor on hover
+// Click expand animation
+document.addEventListener("click", () => {
+  cursor.classList.add("expand");
+  setTimeout(() => cursor.classList.remove("expand"), 300);
+});
+
+// Hover animations
 document.querySelectorAll("a, button").forEach((el) => {
   el.addEventListener("mouseenter", () => {
-    cursor.style.transform = "scale(2)";
-    cursor.style.borderColor = "var(--primary)";
+    cursor.classList.add("scale-150");
+    cursorDot.classList.add("scale-0");
   });
 
   el.addEventListener("mouseleave", () => {
-    cursor.style.transform = "scale(1)";
-    cursor.style.borderColor = "var(--accent)";
+    cursor.classList.remove("scale-150");
+    cursorDot.classList.remove("scale-0");
   });
 });
