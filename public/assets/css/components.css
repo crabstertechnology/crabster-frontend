@@ -119,91 +119,6 @@
 
 
 /* ====================================================
-   4. PRODUCT SLIDER
-==================================================== */
-.product-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 14px 0;
-}
-
-.slider-left,
-.slider-right {
-  position: absolute;
-  top: 50%;
-  width: 60px;
-  height: 60px;
-  background: white;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  font-size: 24px;
-  transition: 0.3s ease;
-}
-
-.slider-left:hover,
-.slider-right:hover {
-  background: #FF6B00;
-  color: white;
-  transform: scale(1.1) translateY(-50%);
-}
-
-.slider-left { left: 20px; }
-.slider-right { right: 20px; }
-
-.slide-dot {
-  width: 12px;
-  height: 12px;
-  background: #ccc;
-  border-radius: 50%;
-  transition: 0.3s ease;
-}
-
-.slide-dot.active,
-.slide-dot:hover {
-  background: #FF6B00;
-}
-
-.explore-btn {
-  padding: 14px 32px;
-  border-radius: 35px;
-  background: linear-gradient(90deg, #fbbf24, #ea580c);
-  color: white;
-  font-weight: 600;
-  margin-top: 20px;
-  transition: 0.3s ease;
-}
-
-.explore-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-}
-
-
-
-/* ====================================================
-   5. VIDEO BUTTON (Uniform Style)
-==================================================== */
-.video-btn {
-  width: 64px;
-  height: 64px;
-  background: rgba(255,255,255,0.2);
-  border: 2px solid rgba(255,255,255,0.4);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s ease;
-}
-
-.video-btn:hover {
-  background: rgba(255,255,255,0.35);
-  transform: scale(1.1);
-}
-
-
-
-/* ====================================================
    6. FOUNDER CARD
 ==================================================== */
 .founder-card {
@@ -343,4 +258,32 @@
 }
 .highlight-orange {
   color: #f97316 !important; /* Orange-500 */
+}
+/* FIX: Always show scroll bar above header */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 99999 !important; /* Highest priority */
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--secondary), var(--accent));
+  width: 0%;
+}
+.header-active {
+  background: rgba(255,255,255,0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+}
+#header {
+  transition: all 0.3s ease;
+}
+
+.header-active .py-4 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
