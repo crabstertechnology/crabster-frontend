@@ -143,29 +143,6 @@
       }
     }
 
-    .play-button {
-      position: absolute;
-      bottom: 24px;
-      left: 24px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.95);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border: none;
-      z-index: 20;
-      pointer-events: auto;
-    }
-
-    .play-button:hover {
-      transform: scale(1.1);
-      background: white;
-    }
-
     .section-header {
       text-align: center;
       margin-bottom: 64px;
@@ -259,21 +236,23 @@
         <div class="video-wrapper h-80">
           <video 
             id="projectVideo" 
+            autoplay
             muted 
             loop 
+            playsinline
+            preload="auto"
             class="w-full h-full object-cover"
+            style="background: #000;"
           >
             <source src="assets/videos/CT003.mp4" type="video/mp4">
+            Your browser does not support the video tag.
           </video>
           
-          <button id="playButton" class="play-button">
-            <svg id="playIcon" width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M8 5V19L19 12L8 5Z" fill="#111827"/>
-            </svg>
-            <svg id="pauseIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: none;">
-              <path d="M6 4H10V20H6V4ZM14 4H18V20H14V4Z" fill="#111827"/>
-            </svg>
-          </button>
+          <!-- Fallback message if video doesn't load -->
+          <div id="videoError" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; background: rgba(0,0,0,0.8); padding: 20px; border-radius: 10px;">
+            <p style="margin-bottom: 10px;">⚠️ Video not found</p>
+            <p style="font-size: 12px; opacity: 0.8;">Check: assets/videos/CT003.mp4</p>
+          </div>
           
           <div class="absolute top-6 right-6">
             <div class="project-status">
@@ -316,21 +295,24 @@
 
 <script>
   const video = document.getElementById('projectVideo');
-  const playButton = document.getElementById('playButton');
-  const playIcon = document.getElementById('playIcon');
-  const pauseIcon = document.getElementById('pauseIcon');
+  const videoError = document.getElementById('videoError');
 
-  playButton.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (video.paused) {
-      video.play();
-      playIcon.style.display = 'none';
-      pauseIcon.style.display = 'block';
-    } else {
-      video.pause();
-      playIcon.style.display = 'block';
-      pauseIcon.style.display = 'none';
-    }
+  // Check if video loads
+  video.addEventListener('loadedmetadata', () => {
+    console.log('✅ Video loaded successfully');
+    console.log('Duration:', video.duration);
+  });
+
+  video.addEventListener('error', (e) => {
+    console.error('❌ Video failed to load');
+    videoError.style.display = 'block';
+  });
+
+  // Ensure autoplay starts (for browsers that support it)
+  video.addEventListener('loadeddata', () => {
+    video.play().catch(err => {
+      console.log('Autoplay prevented:', err);
+    });
   });
 </script>
 

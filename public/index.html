@@ -67,8 +67,21 @@ function loadComponent(id, file) {
         .catch(err => console.error("Component load error:", file, err));
 }
 
-// Load all components
-loadComponent("header-container", "header.html");
+// Load header component
+fetch("./components/header.html")
+    .then(res => res.text())
+    .then(html => {
+        document.getElementById("header-container").innerHTML = html;
+
+        // Apply z-index fix IMMEDIATELY after header loads
+        const header = document.getElementById("header");
+        if (header) {
+            header.style.zIndex = "200";
+            header.style.background = "transparent";
+        }
+    })
+    .catch(err => console.error("Header load error:", err));
+
 loadComponent("hero-container", "hero.html");
 loadComponent("services-container", "services.html");
 loadComponent("newsection-container", "newsection.html");

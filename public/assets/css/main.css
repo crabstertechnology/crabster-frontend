@@ -230,3 +230,14 @@ section {
 
 /* Optional: make container centered & not overly wide */
 .container { max-width: 1200px; margin-left: auto; margin-right: auto; }
+/* ===== FINAL OVERRIDE: PROGRESS BAR ALWAYS ABOVE EVERYTHING ===== */
+.progress-container,
+.progress-bar,
+#myBar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 4px !important;
+    z-index: 999999999 !important; /* Above ALL hero layers */
+    pointer-events: none !important;
+}
