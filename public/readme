@@ -158,60 +158,47 @@ Crabster Technology
 📍 Coimbatore, India
 🌐 https://crabstertech.in
  
- Project structure final version
- crabster-tech/
+ CRABSTER-FRONTEND/
 │
-├── public/                          # Frontend (HTML/CSS/JS)
-│   ├── index.html                   # Main landing page
-│   ├── new.html (optional)
-│   └── assets/
-│       ├── css/
-│       │   ├── main.css
-│       │   ├── animations.css
-│       │   └── components.css
-│       ├── js/
-│       │   ├── app.js
-│       │   ├── navbar.js
-│       │   ├── slider.js
-│       │   ├── cursor.js
-│       │   └── reviews.js           # Connected to Render backend
-│       ├── images/
-│       │   ├── logo.png
-│       │   ├── p.jpg
-│       │   ├── 1.jpg
-│       │   ├── 2.jpg
-│       │   └── sasi.jpg
-│       └── videos/
-│           └── CT003.mp4
-│
-├── src/
+├── public/
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── animations.css
+│   │   │   ├── components.css
+│   │   │   └── main.css
+│   │   │
+│   │   ├── images/
+│   │   │   ├── 1.jpg
+│   │   │   ├── 2.jpg
+│   │   │   ├── logo.png
+│   │   │   ├── p.jpg
+│   │   │   └── sasi.jpg
+│   │   │
+│   │   ├── js/
+│   │   │   ├── app.js
+│   │   │   ├── cursor.js
+│   │   │   ├── navbar.js
+│   │   │   ├── reviews.js
+│   │   │   └── slider.js
+│   │   │
+│   │   └── videos/
+│   │       └── (your .mp4 files)
+│   │
 │   ├── components/
+│   │   ├── contact.html
+│   │   ├── footer.html
+│   │   ├── founders.html
 │   │   ├── header.html
 │   │   ├── hero.html
-│   │   ├── services.html
 │   │   ├── newsection.html
 │   │   ├── products.html
-│   │   ├── founders.html
 │   │   ├── reviews.html
-│   │   ├── contact.html
-│   │   └── footer.html
-│   └── utils/
-│       └── (optional future utilities)
+│   │   └── services.html
+│   │
+│   ├── index.html
+│   ├── new.html
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── readme
 │
-├── dist/                            # Production build (if you bundle)
-│
-├── server/                          # Backend (Node.js + Express + Firestore)
-│   ├── index.js
-│   ├── package.json
-│   ├── config/
-│   │   └── firebase.js              # Uses FIREBASE_SERVICE_ACCOUNT ENV variable
-│   ├── controllers/
-│   │   └── reviews.controller.js
-│   ├── routes/
-│   │   └── reviews.routes.js
-│   └── middlewares/
-│       └── validateReview.js
-│
-├── README.md                        # Project documentation
-├── robots.txt
-└── sitemap.xml
+└── .gitignore
