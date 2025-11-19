@@ -17,8 +17,8 @@
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 
-    <!-- AOS Animations -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -35,72 +35,76 @@
     <div class="cursor"></div>
     <div class="cursor-dot"></div>
 
-    <!-- Progress Bar -->
+    <!-- Scroll Progress Bar -->
     <div class="progress-container">
         <div class="progress-bar" id="myBar"></div>
     </div>
 
-    <!-- ============================= -->
-    <!-- IMPORT: HEADER -->
-    <!-- ============================= -->
-    <div id="header-container">
-        <!-- header.html will be inserted here -->
-        <!-- (I will provide the file in the next step) -->
-    </div>
-
-    <!-- ============================= -->
-    <!-- IMPORT: HERO SECTION -->
-    <!-- ============================= -->
-    <div id="hero-container">
-        <!-- hero.html comes here -->
-    </div>
-
-    <!-- ============================= -->
-    <!-- IMPORT: SERVICES SECTION -->
-    <!-- ============================= -->
+    <!-- COMPONENT CONTAINERS -->
+    <div id="header-container"></div>
+    <div id="hero-container"></div>
     <div id="services-container"></div>
-
-    <!-- ============================= -->
-    <!-- IMPORT: EMBEDDED NEW.HTML CONTENT (NO IFRAME) -->
-    <!-- ============================= -->
     <div id="newsection-container"></div>
-
-    <!-- ============================= -->
-    <!-- IMPORT: PRODUCTS SECTION -->
-    <!-- ============================= -->
     <div id="products-container"></div>
-
-    <!-- ============================= -->
-    <!-- IMPORT: FOUNDERS SECTION -->
-    <!-- ============================= -->
     <div id="founders-container"></div>
-
-    <!-- ============================= -->
-    <!-- IMPORT: REVIEWS SECTION -->
-    <!-- ============================= -->
     <div id="reviews-container"></div>
-
-    <!-- ============================= -->
-    <!-- IMPORT: CONTACT SECTION -->
-    <!-- ============================= -->
     <div id="contact-container"></div>
-
-    <!-- ============================= -->
-    <!-- IMPORT: FOOTER -->
-    <!-- ============================= -->
     <div id="footer-container"></div>
 
+<!-- =============================== -->
+<!-- Load Components Automatically -->
+<!-- =============================== -->
+<script>
+function loadComponent(id, file) {
+    fetch(`./components/${file}`)
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById(id).innerHTML = html;
+        })
+        .catch(err => console.error("Component load error:", file, err));
+}
 
-    <!-- JS FILES -->
-    <script src="assets/js/navbar.js"></script>
-    <script src="assets/js/slider.js"></script>
-    <script src="assets/js/cursor.js"></script>
-    <script src="assets/js/reviews.js"></script>
-    <script src="assets/js/app.js"></script>
+// Load all components
+loadComponent("header-container", "header.html");
+loadComponent("hero-container", "hero.html");
+loadComponent("services-container", "services.html");
+loadComponent("newsection-container", "newsection.html");
+loadComponent("products-container", "products.html");
+loadComponent("founders-container", "founders.html");
+loadComponent("reviews-container", "reviews.html");
+loadComponent("contact-container", "contact.html");
+loadComponent("footer-container", "footer.html");
+</script>
 
-    <!-- AOS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>AOS.init();</script>
+<!-- =============================== -->
+<!-- Initialize After Components Load -->
+<!-- =============================== -->
+<script>
+setTimeout(() => {
+
+    // Init AOS
+    if (window.AOS) AOS.init();
+
+    // Slider init
+    if (typeof initSlider === "function") initSlider();
+
+    // Review system init
+    if (typeof fetchReviews === "function") fetchReviews();
+
+}, 800); 
+</script>
+
+<!-- =============================== -->
+<!-- JS Files (load AFTER components) -->
+<!-- =============================== -->
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/slider.js"></script>
+<script src="assets/js/cursor.js"></script>
+<script src="assets/js/reviews.js"></script>
+<script src="assets/js/app.js"></script>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </body>
 </html>
