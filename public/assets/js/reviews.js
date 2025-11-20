@@ -54,6 +54,7 @@ function setupStars() {
 // =======================
 // FORM ACTIONS
 // =======================
+
 async function submitReview() {
   const nameEl = qs("#username");
   const serviceEl = qs("#service");
