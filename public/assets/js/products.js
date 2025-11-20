@@ -1,15 +1,33 @@
-const video = document.getElementById("projectVideo");
-const videoError = document.getElementById("videoError");
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("projectVideo");
+  const videoError = document.getElementById("videoError");
 
-video.addEventListener("loadedmetadata", () => {
-  console.log("Video loaded");
-});
+  // If video element is missing, stop the script
+  if (!video) {
+    console.warn("projectVideo element not found in DOM");
+    return;
+  }
 
-video.addEventListener("error", () => {
-  console.error("Video failed");
-  videoError.style.display = "block";
-});
+  // If error element missing, fallback to console
+  if (!videoError) {
+    console.warn("videoError element not found in DOM");
+  }
 
-video.addEventListener("loadeddata", () => {
-  video.play().catch(err => console.log("Autoplay blocked:", err));
+  video.addEventListener("loadedmetadata", () => {
+    console.log("Video loaded");
+  });
+
+  video.addEventListener("error", () => {
+    console.error("Video failed");
+
+    if (videoError) {
+      videoError.style.display = "block";
+    }
+  });
+
+  video.addEventListener("loadeddata", () => {
+    video.play().catch(err => {
+      console.log("Autoplay blocked:", err);
+    });
+  });
 });
