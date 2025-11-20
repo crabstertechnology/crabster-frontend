@@ -121,3 +121,13 @@
   border-radius:10px;
   text-align:center;
 }
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media (max-width: 640px) {
+    .video-wrapper {
+        height: 240px !important; /* or any mobile height */
+    }
+}
