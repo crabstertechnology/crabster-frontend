@@ -119,6 +119,10 @@ async function fetchReviews() {
     renderReviews();
   } catch (err) {
     console.error("Failed to fetch reviews", err);
+
+    // REMOVE SKELETONS ON ERROR TOO
+    qsa(".skeleton-review").forEach(el => el.remove());
+
     container.innerHTML = `
       <div class="empty-state" style="grid-column:1/-1;">
         <i class="fas fa-exclamation-circle"></i>
@@ -127,14 +131,18 @@ async function fetchReviews() {
     `;
     qs("#loadMoreBtn")?.classList.add("hidden");
     qs("#hideBtn")?.classList.add("hidden");
-  }
+}
 }
 
 function renderReviews() {
   const container = qs("#reviewsSection");
   if (!container) return;
 
+  // REMOVE SKELETONS FIRST
+  qsa(".skeleton-review").forEach(el => el.remove());
+
   container.innerHTML = "";
+
 
   if (!Array.isArray(reviewsData) || reviewsData.length === 0) {
     container.innerHTML = `
