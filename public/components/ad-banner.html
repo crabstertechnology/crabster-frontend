@@ -1,0 +1,77 @@
+<!-- ==================== EZCIRKIT AD BANNER ==================== -->
+<!-- Loaded dynamically into #ad-container via loader.js          -->
+
+<div id="ezcirkit-ad">
+  <div
+    class="ad-card"
+    onclick="window.open('https://shop.crabstertech.in/', '_blank')"
+    title="Shop EZCirkit">
+
+    <!-- ✕ Close button -->
+    <button
+      class="ad-close"
+      title="Close"
+      onclick="
+        event.stopPropagation();
+        var ad = document.getElementById('ezcirkit-ad');
+        ad.classList.add('ad-gone');
+        setTimeout(function(){ if(ad.parentNode) ad.remove(); }, 420);
+      ">✕</button>
+
+    <!-- Ribbon -->
+    <div class="ad-ribbon">Limited Offer</div>
+
+    <!-- Orange header -->
+    <div class="ad-top">
+      <img
+        src="assets/images/ezcirkit-ad.png"
+        alt="EZCirkit Electronics Starter Kit"
+        onerror="this.style.display='none'"
+      />
+      <div class="ad-brand">
+        <div class="ad-brand-name">
+          EZCirkit <span class="new-badge">NEW</span>
+        </div>
+        <div class="ad-tagline">Electronics Made Easy &amp; Smart</div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="ad-body">
+
+      <!-- Highlight row -->
+      <div class="ad-highlight">
+        <i class="fas fa-microchip"></i>
+        <span>45+ Real World Projects Included</span>
+      </div>
+
+      <!-- Price -->
+      <div class="ad-price-row">
+        <div class="ad-prices">
+          <span class="ad-old">&#8377;3000/-</span>
+          <span class="ad-new">&#8377;2499</span>
+        </div>
+        <span class="ad-save">Save &#8377;501</span>
+      </div>
+
+      <!-- CTA -->
+      <a
+        class="ad-cta"
+        href="https://shop.crabstertech.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="event.stopPropagation()">
+        <i class="fas fa-shopping-cart"></i>
+        Shop Now – Limited Offer
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="ad-footer">
+      <span class="pulse-dot"></span>
+      <i class="fas fa-clock"></i>
+      Limited time offer — Grab yours today!
+    </div>
+
+  </div>
+</div>

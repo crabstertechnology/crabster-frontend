@@ -1,0 +1,279 @@
+/* ============================================================
+   ad-banner.css — EZCirkit Floating Ad Banner Styles
+   ============================================================ */
+
+/* === AD WRAPPER === */
+#ezcirkit-ad {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99999;
+  width: 310px;
+  font-family: 'Poppins', sans-serif;
+  animation: adSlideIn 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes adSlideIn {
+  from { transform: translateY(130px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* === CARD === */
+#ezcirkit-ad .ad-card {
+  position: relative;
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.20), 0 0 0 2px rgba(255, 107, 0, 0.18);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  text-decoration: none;
+}
+
+#ezcirkit-ad .ad-card:hover {
+  transform: translateY(-7px) scale(1.025);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.24), 0 0 0 3px rgba(255, 107, 0, 0.40);
+}
+
+/* === RIBBON === */
+#ezcirkit-ad .ad-ribbon {
+  position: absolute;
+  top: 16px;
+  right: 0;
+  background: linear-gradient(135deg, #e63012, #ff4d2a);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  padding: 5px 16px 5px 12px;
+  text-transform: uppercase;
+  z-index: 3;
+  box-shadow: -2px 3px 8px rgba(0, 0, 0, 0.22);
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%);
+}
+
+/* === ORANGE TOP AREA === */
+#ezcirkit-ad .ad-top {
+  background: linear-gradient(135deg, #FF6B00 0%, #ff8c2a 50%, #ffc107 100%);
+  padding: 18px 18px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+#ezcirkit-ad .ad-top img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 5px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+#ezcirkit-ad .ad-brand {
+  color: #fff;
+}
+
+#ezcirkit-ad .ad-brand-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+#ezcirkit-ad .ad-brand-name .new-badge {
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+#ezcirkit-ad .ad-tagline {
+  font-size: 0.68rem;
+  font-weight: 500;
+  margin-top: 5px;
+  opacity: 0.88;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* === BODY === */
+#ezcirkit-ad .ad-body {
+  padding: 14px 16px;
+  background: #fff;
+}
+
+/* Projects highlight strip */
+#ezcirkit-ad .ad-highlight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff4e8;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 13px;
+  border-left: 3px solid #FF6B00;
+}
+
+#ezcirkit-ad .ad-highlight i {
+  color: #FF6B00;
+  font-size: 0.8rem;
+}
+
+#ezcirkit-ad .ad-highlight span {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Price row */
+#ezcirkit-ad .ad-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+#ezcirkit-ad .ad-prices {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+
+#ezcirkit-ad .ad-old {
+  font-size: 0.82rem;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+#ezcirkit-ad .ad-new {
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: #FF6B00;
+  line-height: 1;
+}
+
+#ezcirkit-ad .ad-save {
+  background: #22c55e;
+  color: #fff;
+  font-size: 0.64rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* CTA button */
+#ezcirkit-ad .ad-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #FF6B00, #ff9e44);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: filter 0.2s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+#ezcirkit-ad .ad-cta:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Footer */
+#ezcirkit-ad .ad-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 16px 12px;
+  font-size: 0.66rem;
+  color: #e63012;
+  font-weight: 600;
+}
+
+#ezcirkit-ad .ad-footer i {
+  animation: tickTock 1s infinite alternate ease-in-out;
+}
+
+@keyframes tickTock {
+  from { transform: rotate(-12deg); }
+  to   { transform: rotate(12deg); }
+}
+
+/* Close button */
+#ezcirkit-ad .ad-close {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.28);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s;
+  line-height: 1;
+  font-family: sans-serif;
+}
+
+#ezcirkit-ad .ad-close:hover {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+/* Dismiss animation */
+#ezcirkit-ad.ad-gone {
+  animation: adBye 0.4s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes adBye {
+  to { transform: translateY(150px); opacity: 0; }
+}
+
+/* Pulse live dot */
+#ezcirkit-ad .pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+#ezcirkit-ad .pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.4);
+  animation: pulseGrow 1.5s infinite;
+}
+
+@keyframes pulseGrow {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
